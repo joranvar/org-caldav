@@ -1275,7 +1275,7 @@ If LEVEL is nil, it defaults to 1.
 
 Returns MD5 from entry."
   (insert (make-string (or level 1) ?*) " " summary "\n")
-  (insert "  "
+  (insert (if org-adapt-indentation "  " "")
    (org-caldav-create-time-range start-d start-t end-d end-t) "\n")
   (when (> (length description) 0)
     (insert "  " description "\n"))
